@@ -110,3 +110,53 @@ footer{padding:60px 20px 20px;border-top:1px solid rgba(255,255,255,.08);backgro
 #backToTop.show{opacity:1;pointer-events:all}
 @media(max-width:768px){.nav-links{position:fixed;inset:0;background:rgba(6,7,15,.98);backdrop-filter:blur(20px);flex-direction:column;align-items:center;justify-content:center;transform:translateX(100%);transition:.4s}.nav-links.open{transform:translateX(0)}.mobile-toggle{display:flex}.about-card{padding:24px}.founder-card{flex-direction:column;text-align:center}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+/* ===== SFONDO RP ===== */
+
+body {
+    background: #05050a;
+}
+
+/* Sfondo generale */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -10;
+
+    background:
+        linear-gradient(
+            rgba(5, 5, 12, 0.68),
+            rgba(5, 5, 12, 0.78)
+        ),
+        url("assets/hero.jpg") center center / cover no-repeat;
+
+    filter: saturate(1.15);
+    transform: scale(1.03);
+    pointer-events: none;
+}
+
+/* Glow neon sopra lo sfondo */
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -9;
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle at 20% 30%,
+            rgba(255, 0, 180, 0.16),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(0, 220, 255, 0.14),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            rgba(255, 0, 140, 0.05),
+            rgba(0, 220, 255, 0.05)
+        );
+}
